@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-toolbar color="dark">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Add gag</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item>
+        <ion-input [(ngModel)]="gag.title" placeholder="This is so funny"></ion-input>
+    </ion-item>
+
+    <div class="image-upload" (click)="addImage()" tappable>
+        <p class="upload-text" *ngIf="!capturedImage">
+            <ion-icon name="image"></ion-icon>
+            Add your meme
+        </p>
+        <img [src]="capturedImage" *ngIf="capturedImage">
+    </div>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button color="success" (click)="save()" [disabled]="gag.title == '' || !capturedImage">
+            <ion-icon name="checkmark"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+</ion-content>

@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "photoapp-23936": {
+      "hosting": {
+        "app": [
+          "photoapp-23936"
+        ]
+      }
+    }
+  }
+}
